@@ -17,6 +17,13 @@ class p9 {
       return b;
   }
 
+  /*
+  - 選択ソートをするclassです
+  - データ列中で一番小さい値を探し、1番目の要素と交換する。
+  -次に、2番目以降のデータ列から一番小さい値を探し、2番目の要素と交換する。
+  -これを、データ列の最後まで繰り返す
+  -（厳密には、データ列の最後より1つ手前までの繰り返しでよい。(wikiから引用)
+  */
   static int homura(int mami[]){
     //minは最小値をいれる変数
     int min = 0;
@@ -24,6 +31,7 @@ class p9 {
       min = i;
       for(int j=i+1;j<mami.length;j++){
         //n番目の要素とn+1番目の要素を比較
+        //末尾まで走査するので、mami[min]には最小値が格納されます
         if(mami[min] > mami[j]){
           int flg = mami[min];
           mami[min] = mami[j];
